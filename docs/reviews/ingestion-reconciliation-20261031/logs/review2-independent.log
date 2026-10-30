@@ -1,0 +1,41 @@
+commit=bc894774d830d98740cdd41ec58174d63c70d800
+$ python /workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/ingestion-reconciliation-20261031/independent_checks.py /workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder
+{
+  "checks": "pass",
+  "same_title_separate": true,
+  "invalid_version_atomic_rollback": true,
+  "contradictory_record_rejected": true,
+  "source_url_identity": true,
+  "old_version_no_downgrade": true,
+  "remerge_core_counts_idempotent": true,
+  "input_bytes_unchanged": true,
+  "locality_small": {
+    "vm_instructions": 299,
+    "sql_statements": 10,
+    "returned_identifiers": 2,
+    "output_bytes": 43
+  },
+  "locality_plus1000_unrelated": {
+    "vm_instructions": 299,
+    "sql_statements": 10,
+    "returned_identifiers": 2,
+    "output_bytes": 43
+  },
+  "query_plans": {
+    "arxiv": [
+      "SEARCH papers USING INDEX idx_paper_arxiv (arxiv_id=?)"
+    ],
+    "source": [
+      "SEARCH source_records USING INDEX sqlite_autoindex_source_records_1 (source_name=? AND source_id=?)"
+    ],
+    "doi": [
+      "SEARCH papers USING INDEX idx_paper_doi (doi=?)"
+    ],
+    "alias": [
+      "SEARCH paper_doi_aliases USING INDEX sqlite_autoindex_paper_doi_aliases_1 (doi=?)"
+    ]
+  }
+}
+
+exit_code=0
+elapsed=0.702s

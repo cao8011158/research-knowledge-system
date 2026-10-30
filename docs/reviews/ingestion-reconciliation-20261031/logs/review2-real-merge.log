@@ -1,0 +1,6 @@
+commit=bc894774d830d98740cdd41ec58174d63c70d800
+$ python scripts/reconcile_sqlite.py --input /workspace/scratch/fb0b6c3eb637/upload/01-local_candidates_20261030T193836Z.sqlite3.bin --input /workspace/scratch/fb0b6c3eb637/private_data/seed_drive_current.sqlite3 --output /workspace/scratch/fb0b6c3eb637/private_data/reconciled_final.sqlite3 --report /workspace/scratch/fb0b6c3eb637/private_data/reconciled_final_report.json
+{"discovery_hits": 414, "extraction_records": 20, "paper_topics": 387, "paper_versions": 383, "papers": 365, "pipeline_runs": 0, "reconciliation_audit": 2000, "source_records": 391}
+
+exit_code=0
+elapsed=0.160s

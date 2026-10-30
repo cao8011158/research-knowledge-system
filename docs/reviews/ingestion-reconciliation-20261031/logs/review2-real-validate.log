@@ -1,0 +1,23 @@
+commit=bc894774d830d98740cdd41ec58174d63c70d800
+$ python /workspace/scratch/fb0b6c3eb637/private_data/validate_merge.py /workspace/scratch/fb0b6c3eb637/private_data/reconciled_final_report.json
+{
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "input_hashes_unchanged": true,
+  "all_source_payloads_audited": true,
+  "all_extraction_content_status_preserved": true,
+  "confirmed_current_pointers_only": true,
+  "counts": {
+    "papers": 365,
+    "paper_versions": 383,
+    "source_records": 391,
+    "paper_topics": 387,
+    "discovery_hits": 414,
+    "extraction_records": 20,
+    "pipeline_runs": 0,
+    "reconciliation_audit": 2000
+  }
+}
+
+exit_code=0
+elapsed=0.892s

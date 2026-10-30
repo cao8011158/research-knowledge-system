@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "batch_id": "RKG-ingestion-reconciliation-20261031",
+  "repository": "cao8011158/kg-builder",
+  "branch": "work/ingestion-reconciliation-20261031",
+  "base_sha": "1e94d75b7c98ec83304639466c4dc5719d232a79",
+  "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+  "target_branch": "main",
+  "target_sha": "1e94d75b7c98ec83304639466c4dc5719d232a79",
+  "implementation_actor": "ingestion_fix",
+  "merge_authorized": true,
+  "authorization_reference": "User: 好的 请执行, accepting steps1-4 and code push + main submodule update in preceding plan; original session explicitly authorizes push.",
+  "scope": [
+    "metadata collectors and SQLite identity/version store",
+    "offline provenance preserving merge",
+    "preliminary scope triage and seed preservation",
+    "Drive persistence and main submodule pointer"
+  ],
+  "acceptance_criteria": [
+    "strong-ID matching, no title-only merges",
+    "confirmed-only current versions, numeric ordering",
+    "repeat merge idempotent, audit and Drafts preserved",
+    "input hashes unchanged and restored Drive database integrity",
+    "no LLM API or scheduler execution"
+  ],
+  "feature_complete": true,
+  "scale_required": true,
+  "tests": [
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "PYTHONPATH=src",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-fix1.log",
+      "log_sha256": "7cf0b7774c68c6f50c8633117a2d0c412bdf1cdcf05e374a1c024496bcaeb727"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "PYTHONPATH=src",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-fix1.log",
+      "log_sha256": "7cf0b7774c68c6f50c8633117a2d0c412bdf1cdcf05e374a1c024496bcaeb727"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-tests.log",
+      "log_sha256": "87f97870c24eb12865a84a8e4bca1e904a9dc00e47c6e1e2d42ac4f6eca7aea3"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "python",
+        "/workspace/scratch/fb0b6c3eb637/private_data/validate_merge.py",
+        "/workspace/scratch/fb0b6c3eb637/private_data/reconciled_final_report.json"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-real-validate.log",
+      "log_sha256": "a4e71631758f2da408fb901af1b19b6856abeae1ffca1279a6aaed813591e3b3"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/ingestion-reconciliation-20261031/independent_checks.py",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-independent.log",
+      "log_sha256": "d9295b700e9d536befd117038d3bf07debd6ab153c69d0d7a02b1fcee4e3e6cf"
+    },
+    {
+      "role": "reviewer",
+      "kind": "drive_roundtrip",
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "command": [
+        "python",
+        "authenticated_drive_download_and_hash_check"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/drive-roundtrip.log",
+      "log_sha256": "95b40793319576553398762306e458ca38c42560e37774c4eb204f7aeeb67646"
+    }
+  ],
+  "reviews": [
+    {
+      "round": 1,
+      "head_sha": "3edf0cc2c94d1c4f00c7adc2593013e0ad89bd05",
+      "remote_head_sha": "3edf0cc2c94d1c4f00c7adc2593013e0ad89bd05",
+      "actor": "root-reviewer",
+      "verdict": "changes_required",
+      "counterexample_note": "Reconcile(output+original) reproduces audit primary key conflict; inputs untouched, new output rollback."
+    },
+    {
+      "round": 2,
+      "head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "remote_head_sha": "bc894774d830d98740cdd41ec58174d63c70d800",
+      "actor": "root-reviewer",
+      "verdict": "pass",
+      "counterexample_note": "Repeated output+original now passes; identical-byte sources and tampered provenance covered. Public upsert costs299 VM instructions/10 statements at0 and1000 unrelated rows; real merge preserves all20 Drafts and391 sources; Drive restoration hash verified."
+    }
+  ],
+  "findings": [
+    {
+      "id": "RKG-01",
+      "severity": "P2",
+      "confirmed": true,
+      "blocking": true,
+      "state": "resolved",
+      "location": "scripts/reconcile_sqlite.py save_audit/save_redirect",
+      "discovered_in_batch": "RKG-ingestion-reconciliation-20261031",
+      "owner_step": "ingestion reconciliation",
+      "owner_batch": "RKG-ingestion-reconciliation-20261031",
+      "origin": "current batch",
+      "dependency_core": false,
+      "route": "bounded fix followed by round2"
+    }
+  ]
+}
