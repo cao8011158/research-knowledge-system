@@ -1,0 +1,6 @@
+[submodule "kg-builder"]
+	path = kg-builder
+	url = https://github.com/cao8011158/kg-builder.git
+[submodule "research-agent"]
+	path = research-agent
+	url = https://github.com/cao8011158/research-agent.git
