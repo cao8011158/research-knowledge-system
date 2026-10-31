@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "paper_count": 365,
+  "new_extractions": 6,
+  "contributions": 11,
+  "evaluations": 14,
+  "valid_anchors": 34,
+  "table_and_protocol_checks": [
+    "A-Mem: GPT-4o-mini block / Multi Hop / F1 cells",
+    "ACE: offline GT-available normal TGC versus ReAct",
+    "ToolRL: Qwen2.5-7B BFCL V3 overall column",
+    "DAPO: avg@32 header and final versus naive GRPO rows",
+    "SkillWeaver: GPT-4o versus +Skills AVG. column",
+    "DGM:50-task subset and full Polyglot source paragraphs separated"
+  ],
+  "typed_relations_valid": true,
+  "original_rows_retained_exactly": true,
+  "all_extractions_remain_draft": true,
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "final_sha256": "38e6c2f0afa41cc66a506946137f0e971dd06746968c3acfc2cf761276ee164d",
+  "input_sha256": "f9e235a7a1b60e86db24301ddf41bc7d6049de06a66cd0daa6de7423e59b5de1",
+  "llm_api_calls": 0,
+  "graph_writes": 0,
+  "version_metadata_api": "timeout; not used to fabricate version dates"
+}
