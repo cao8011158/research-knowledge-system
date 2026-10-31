@@ -1,0 +1,9 @@
+{
+  "valid_reordered_source_rows_and_foreign_keys": true,
+  "preserved": {
+    "entity_resolution_batches": false,
+    "entity_resolution_entities": false,
+    "entity_resolution_mentions": false
+  },
+  "lookup_works_after_reconciliation": false
+}

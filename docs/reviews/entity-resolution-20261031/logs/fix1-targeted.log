@@ -1,0 +1,28 @@
+commit=088a942f50f49b7b89094c2485ff1de0a387d94b
+tree=df3e9f179e84d1920b4cf8fbee1e0ee47dfd58ae
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python -m unittest discover -s tests -p test_entity_resolution.py -v
+test_atomic_invalid_second_and_sql_failure_in_outer_transaction (test_entity_resolution.ResolutionTests.test_atomic_invalid_second_and_sql_failure_in_outer_transaction) ... ok
+test_cli_invalid_manifest_before_db_creation (test_entity_resolution.ResolutionTests.test_cli_invalid_manifest_before_db_creation) ... ok
+test_immutable_import_and_indexed_query (test_entity_resolution.ResolutionTests.test_immutable_import_and_indexed_query) ... ok
+test_lookup_uses_one_snapshot_and_preserves_outer_transaction (test_entity_resolution.ResolutionTests.test_lookup_uses_one_snapshot_and_preserves_outer_transaction) ... ok
+test_reconcile_resolution_columns_in_different_order (test_entity_resolution.ResolutionTests.test_reconcile_resolution_columns_in_different_order) ... ok
+test_reconcile_retention_repeat_and_remap_failure (test_entity_resolution.ResolutionTests.test_reconcile_retention_repeat_and_remap_failure) ... ok
+test_semantic_guards (test_entity_resolution.ResolutionTests.test_semantic_guards) ... ok
+test_stale_mention_and_support_closure (test_entity_resolution.ResolutionTests.test_stale_mention_and_support_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.195s
+
+OK
+exit_code=0
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python parent/.../column_order_check.py --repo . --db private_annotated_copy --work /tmp/kg-er-column-order-fix1-post --expect-fixed
+{
+  "valid_reordered_source_rows_and_foreign_keys": true,
+  "preserved": {
+    "entity_resolution_batches": true,
+    "entity_resolution_entities": true,
+    "entity_resolution_mentions": true
+  },
+  "lookup_works_after_reconciliation": true
+}
+exit_code=0

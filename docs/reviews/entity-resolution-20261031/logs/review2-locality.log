@@ -1,0 +1,342 @@
+{
+  "public_path": "get_resolution_mentions -> composite mention index -> requested extraction PK -> referenced entity PK -> exact support extraction PK closure",
+  "scope": "Synthetic unrelated growth around the actual27entity/74mention review. VM counts plus fetched-text bytes; no graph-scale claim.",
+  "measurements": [
+    {
+      "unrelated_batches_entities_mentions": 0,
+      "unrelated_large_payload_bytes": 0,
+      "mode": "first",
+      "query": "matching",
+      "vm_instructions": 181,
+      "sql_statements": 10,
+      "selects": 8,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 6,
+          "text_bytes": 4076
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9854
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1159
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1183
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 555
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 561
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 835
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9889
+        }
+      ],
+      "result_mentions": 6,
+      "reply_bytes": 9137,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 0,
+      "unrelated_large_payload_bytes": 0,
+      "mode": "first",
+      "query": "absent_batch",
+      "vm_instructions": 20,
+      "sql_statements": 3,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 0,
+          "text_bytes": 0
+        }
+      ],
+      "result_mentions": 0,
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 0,
+      "unrelated_large_payload_bytes": 0,
+      "mode": "repeat",
+      "query": "matching",
+      "vm_instructions": 175,
+      "sql_statements": 10,
+      "selects": 8,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 6,
+          "text_bytes": 4076
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9854
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1159
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1183
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 555
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 561
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 835
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9889
+        }
+      ],
+      "result_mentions": 6,
+      "reply_bytes": 9137,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 0,
+      "unrelated_large_payload_bytes": 0,
+      "mode": "repeat",
+      "query": "absent_batch",
+      "vm_instructions": 20,
+      "sql_statements": 3,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 0,
+          "text_bytes": 0
+        }
+      ],
+      "result_mentions": 0,
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 1000,
+      "unrelated_large_payload_bytes": 49152000,
+      "mode": "first",
+      "query": "matching",
+      "vm_instructions": 175,
+      "sql_statements": 10,
+      "selects": 8,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 6,
+          "text_bytes": 4076
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9854
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1159
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1183
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 555
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 561
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 835
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9889
+        }
+      ],
+      "result_mentions": 6,
+      "reply_bytes": 9137,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 1000,
+      "unrelated_large_payload_bytes": 49152000,
+      "mode": "first",
+      "query": "absent_batch",
+      "vm_instructions": 20,
+      "sql_statements": 3,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 0,
+          "text_bytes": 0
+        }
+      ],
+      "result_mentions": 0,
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 1000,
+      "unrelated_large_payload_bytes": 49152000,
+      "mode": "repeat",
+      "query": "matching",
+      "vm_instructions": 175,
+      "sql_statements": 10,
+      "selects": 8,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 6,
+          "text_bytes": 4076
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9854
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1159
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 1183
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 555
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 561
+        },
+        {
+          "table": "entity_resolution_entities",
+          "rows": 1,
+          "text_bytes": 835
+        },
+        {
+          "table": "extraction_records",
+          "rows": 1,
+          "text_bytes": 9889
+        }
+      ],
+      "result_mentions": 6,
+      "reply_bytes": 9137,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_batches_entities_mentions": 1000,
+      "unrelated_large_payload_bytes": 49152000,
+      "mode": "repeat",
+      "query": "absent_batch",
+      "vm_instructions": 20,
+      "sql_statements": 3,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "table": "entity_resolution_mentions",
+          "rows": 0,
+          "text_bytes": 0
+        }
+      ],
+      "result_mentions": 0,
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    }
+  ]
+}

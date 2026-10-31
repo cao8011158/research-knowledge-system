@@ -1,0 +1,44 @@
+{
+  "files": {
+    "live": {
+      "sha256": "f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8",
+      "bytes": 9625600,
+      "matches": true
+    },
+    "manifest": {
+      "sha256": "c0a5f29fe74aac52acb46456c9839a1e4f4c201d7e430976cb0206aed46e3106",
+      "bytes": 84521,
+      "matches": true
+    },
+    "validation": {
+      "sha256": "cf7fe26abedc1deed10234f48f8ede20fa780d7303e2b9d476ab3fef2db44f9a",
+      "bytes": 1426,
+      "matches": true
+    },
+    "backup": {
+      "sha256": "38e6c2f0afa41cc66a506946137f0e971dd06746968c3acfc2cf761276ee164d",
+      "bytes": 9400320,
+      "matches": true
+    },
+    "snapshot": {
+      "sha256": "f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8",
+      "bytes": 9625600,
+      "matches": true
+    }
+  },
+  "restored_counts": {
+    "papers": 365,
+    "paper_versions": 389,
+    "source_records": 397,
+    "extraction_records": 26,
+    "relevance_reviews": 371,
+    "entity_resolution_batches": 1,
+    "entity_resolution_entities": 27,
+    "entity_resolution_mentions": 74
+  },
+  "all_mentions_current": 74,
+  "active_resolutions": 34,
+  "pending": 40,
+  "integrity": "ok",
+  "fk_violations": 0
+}

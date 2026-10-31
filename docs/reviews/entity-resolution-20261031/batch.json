@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "batch_id": "RKG-entity-resolution-20261031",
+  "repository": "cao8011158/kg-builder",
+  "branch": "work/entity-resolution-20261031",
+  "base_sha": "f87c460924aaca04e9500c79ed82c0991fedf8e6",
+  "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+  "target_branch": "main",
+  "target_sha": "f87c460924aaca04e9500c79ed82c0991fedf8e6",
+  "implementation_actor": "ingestion_fix",
+  "merge_authorized": true,
+  "authorization_reference": "User \u597d\u7684 \u7ee7\u7eed accepts cross-paper identity review and durable results; prior session authorizes code push, main gitlink update and private Drive DB persistence.",
+  "scope": [
+    "manual Method/ResearchProblem/Artifact identity review",
+    "immutable hash-bound identity batches and query",
+    "supported reconciliation retention",
+    "Drive backup/restore and parent integration"
+  ],
+  "acceptance_criteria": [
+    "actual74mentions:34resolved into27entities,40pending without fabricated merges",
+    "all26Draft extraction rows and371relevance reviews preserved",
+    "atomic immutable import, support closure stale detection, consistent query snapshot",
+    "indexed explicit lookup and no payload read on missing review",
+    "all three resolution tables preserved independent of physical column order",
+    "Drive byte-identical roundtrip; no LLM API or graph execution"
+  ],
+  "feature_complete": true,
+  "scale_required": true,
+  "tests": [
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_entity_resolution.py",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-targeted.log",
+      "log_sha256": "b443ce403fe8e8841929aabc5d7ae7cb1d576b1c86dea57bc73b408924b0d9cb"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-fast.log",
+      "log_sha256": "eed02cd887a4befc0b838bed9926e954c05c335cfb1a23c6ed524436c8e03d24"
+    },
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_entity_resolution.py",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/fix1-targeted.log",
+      "log_sha256": "3a733983bc04a33432f49c09ff6180a663b7460f918cd9f64445960caec1eb68"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/fix1-fast.log",
+      "log_sha256": "0a9f21587fdd4c107f303ce418ab49c53a22b2b8db9e12b4c5b885c67824d894"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-fast.log",
+      "log_sha256": "0741d9bf949d8cdbbfdc5002b37c69a003c8e5eb107a223a352b479ea68d82a4"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/independent_acceptance.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--input",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/input.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/entity_resolution_manifest.json",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/review1"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-real.log",
+      "log_sha256": "2a3122b6b4761c077bf96ae7f54dcd384089980c3e89369b6d49a15b251dda49"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/locality_checks.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/review1/annotated.sqlite3"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-locality.log",
+      "log_sha256": "423b4a9b674af3f0bbab4eec7b3f1fdf2a7f5db347b2c48f02b433dcb964b6c0"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-fast.log",
+      "log_sha256": "09b5af9f0922c6445d5a7a906ca1a2f46e6bb0c35239df06f274f525876a92ea"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/independent_acceptance.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--input",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/input.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/entity_resolution_manifest.json",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/review2"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-real.log",
+      "log_sha256": "2a3122b6b4761c077bf96ae7f54dcd384089980c3e89369b6d49a15b251dda49"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/locality_checks.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/review2/annotated.sqlite3"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-locality.log",
+      "log_sha256": "423b4a9b674af3f0bbab4eec7b3f1fdf2a7f5db347b2c48f02b433dcb964b6c0"
+    },
+    {
+      "role": "reviewer",
+      "kind": "counterexample",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/column_order_check.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/review2/annotated.sqlite3",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/column_order2",
+        "--expect-fixed"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-column-order.log",
+      "log_sha256": "5b198579ec2c998182e3b6af51eca928718f073a6ad6fefb661264871c5f3c09"
+    },
+    {
+      "role": "reviewer",
+      "kind": "package_probe",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-er-installed-review-20261031/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/entity-resolution-20261031/package_loading_check.py",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/input.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/entity_resolution_20261031/entity_resolution_manifest.json",
+        "--expected-prefix",
+        "/tmp/kg-er-installed-review-20261031/"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-package-probe.log",
+      "log_sha256": "5af3eebc4509000ebcd930bf120a1b5b2985fc9f2939945880e377174fe2c368"
+    },
+    {
+      "role": "reviewer",
+      "kind": "drive_roundtrip",
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/drive-roundtrip.log",
+      "log_sha256": "bbc3d29e2cc2a97fdb3a353e89a505f5b34f92b8fafa932fc505fe28b3cdce67",
+      "stdin_note": "Authenticated raw downloads of live DB, pre-review backup, reviewed snapshot, manifest and validation; SHA256 equality, SQLite integrity/FK and all74 API lookup states verified."
+    }
+  ],
+  "reviews": [
+    {
+      "round": 1,
+      "head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "remote_head_sha": "884f41f8c5e3ffba97567d894c78199c213cb9aa",
+      "actor": "root-reviewer",
+      "verdict": "changes_required",
+      "counterexample_note": "Actual74 and original rows pass, but reordered supported resolution columns silently misassign all3tables and break lookup."
+    },
+    {
+      "round": 2,
+      "head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "remote_head_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+      "actor": "root-reviewer",
+      "verdict": "pass",
+      "counterexample_note": "ER-01 closed for all3tables, public lookup/repeat pass; real74/sourcehash/kind/locality/atomicity/installed package checks pass."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ER-01",
+      "severity": "P2",
+      "confirmed": true,
+      "blocking": true,
+      "state": "resolved",
+      "location": "scripts/reconcile_sqlite.py resolution-table copy",
+      "discovered_in_batch": "RKG-entity-resolution-20261031",
+      "owner_step": "entity resolution",
+      "owner_batch": "RKG-entity-resolution-20261031",
+      "origin": "current batch",
+      "dependency_core": false,
+      "route": "bounded named-column fix and round2"
+    }
+  ]
+}

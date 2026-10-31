@@ -1,0 +1,19 @@
+commit=2e52a204f80bb2263654bd5f9b8e85439f20561f
+tree=eff3b33ce91503493f5f866fd3837a7ddfc06107
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python -m unittest discover -s tests -p test_entity_resolution.py -v
+test_atomic_invalid_second_and_sql_failure_in_outer_transaction (test_entity_resolution.ResolutionTests.test_atomic_invalid_second_and_sql_failure_in_outer_transaction) ... ok
+test_cli_invalid_manifest_before_db_creation (test_entity_resolution.ResolutionTests.test_cli_invalid_manifest_before_db_creation) ... ok
+test_immutable_import_and_indexed_query (test_entity_resolution.ResolutionTests.test_immutable_import_and_indexed_query) ... ok
+test_lookup_uses_one_snapshot_and_preserves_outer_transaction (test_entity_resolution.ResolutionTests.test_lookup_uses_one_snapshot_and_preserves_outer_transaction) ... ok
+test_reconcile_retention_repeat_and_remap_failure (test_entity_resolution.ResolutionTests.test_reconcile_retention_repeat_and_remap_failure) ... ok
+test_semantic_guards (test_entity_resolution.ResolutionTests.test_semantic_guards) ... ok
+test_stale_mention_and_support_closure (test_entity_resolution.ResolutionTests.test_stale_mention_and_support_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.157s
+
+OK
+exit_code=0
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python read-only schema/source binding check of private manifest
+validated 27 entities and 74 mentions; input read-only
+exit_code=0

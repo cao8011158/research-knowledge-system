@@ -1,0 +1,4 @@
+Initial roundtrip invocation used default python, which lacks jsonschema.
+Observed exit1 before network download or database reads/writes.
+ModuleNotFoundError: No module named jsonschema
+Source: tool output chunk70e6e2. Retry uses /tmp/kg-builder-test-venv/bin/python with declared dependencies; its actual result is in drive-roundtrip.log.
