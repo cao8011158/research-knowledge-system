@@ -1,6 +1,6 @@
 # Primary-source identity and problem-boundary review — 2026-10-31
 
-Current status: independent review passed in round2; code merged and backed-up Drive database restored successfully. Final parent integration follows below.
+Current status: complete. Review passed in round2; child main d99883bdba496373d1a61365a47e63dff0e5bf41; parent integration743540d837a2eea4cbfa52ffb6dc24205d84f00a. Backed-up Drive data restored successfully. This closing report-only update follows integration.
 
 本批结果：14个旧方法标签中8个明确映射、4个拆分、2个分类标签不作Method；26个研究问题已逐项定界，25条上下位联系均标明是建模判断。旧记录保留，未执行建图。
 
@@ -92,3 +92,7 @@ All seven files were fetched again and hash-compared with their local inputs. Cu
 The current batch is entity-resolution-20261031-v2. Six SQLpending single-ID rows are intentional completed compound/nonmethod adjudications, not six unverified cases; review_outcome supplies the distinction. All old26Drafts and371relevance reviews retained. No Draft promotions, result reproduction, frozen ontology, embeddings, graph writer or LLMAPI extraction.
 
 Parent integration will pin the reviewed code and persist cumulative reports/negative cases/recovery evidence; private DBs, source Drafts and manifests remain outside Git. Further work can validate additional varied ontology cases and define graph materialization policy for scoped identities and reviewer-authored relations; it must not pretend all365paper candidates have been extracted.
+
+### Final integration readback
+
+Fetched parent main743540d837a2eea4cbfa52ffb6dc24205d84f00a; tree46a5e332a2b83b7f64fba24b1b7236a0a50cf5fb matches prepared local tree. kg-builder gitlinkd99883bdba496373d1a61365a47e63dff0e5bf41 is the independently reviewed code; research-agent remains75a08ee785a02a8b6d0c17a10501f6fe076fbd57. Working trees clean at readback. Final handoff-only update does not change implementation or need repeated production tests. No open blocker or outstanding permission request.
