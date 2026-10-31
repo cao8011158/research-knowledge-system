@@ -1,6 +1,6 @@
 # Cross-paper entity resolution — 2026-10-31
 
-Current status: review passed in round2, code merged and private Drive database updated/read back. Parent integration and final handoff are described below.
+Current status: complete. Review passed in round2; child main `dfb170532d53afc60e1e3f06197fc640f0f6e4a7`, parent integration `8524c60fe3c949dc8fe017ddb96d6957bd550b2b`. Private DB/decisions are saved and restored successfully. This final handoff-only update follows the integration commit.
 
 Stages: baseline → developer candidate → review1/ER-01 → bounded fix → review2/pass → Drive backup/publication/restore → parent integration.
 
@@ -84,8 +84,12 @@ Drive source metadata was checked immediately before replacement and still match
 | Validation |[entity_resolution_validation_20261031.json](https://drive.google.com/file/d/19M64dlQn8xNQ6G4RgZsS-scfnnRUHJJN/view?usp=drivesdk),1,426bytes |
 | Restore proof |[entity_resolution_roundtrip_20261031.json](https://drive.google.com/file/d/1iRC2LgpP8MWGlzNA4Dav-Y-rVIXjST9a/view?usp=drivesdk),actual downloaded-byte hashes and restored lookup counts |
 
-All five files were downloaded again and verified byte-for-byte SHA256 equality. Current DB/snapshot hash `f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8`; manifest `c0a5f29fe74aac52acb46456c9839a1e4f4c201d7e430976cb0206aed46e3106`; validation `cf7fe26abedc1deed10234f48f8ede20fa780d7303e2b9d476ab3fef2db44f9a`. Restored DB integrityOK/FK0;365papers,389versions,397sources,26extractions,371relevance reviews,1resolution batch,27entities,74mentions. API lookup of all74returns34current identities and40pending,0stale.
+The authoritative DB, prior DB backup, reviewed snapshot, manual manifest and validation JSON were downloaded again and verified byte-for-byte SHA256 equality. Restore proof was generated from those checks, uploaded separately and metadata-read back. Current DB/snapshot hash `f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8`; manifest `c0a5f29fe74aac52acb46456c9839a1e4f4c201d7e430976cb0206aed46e3106`; validation `cf7fe26abedc1deed10234f48f8ede20fa780d7303e2b9d476ab3fef2db44f9a`. Restored DB integrityOK/FK0;365papers,389versions,397sources,26extractions,371relevance reviews,1resolution batch,27entities,74mentions. API lookup of all74returns34current identities and40pending,0stale.
 
 The first restore-script invocation accidentally used the default interpreter without jsonschema and failed before any download/write. Retried with the established dependency environment; all restore checks passed. This environment-only failure and successful raw results are retained separately.
 
 Parent integration pins the reviewed child and adds this cumulative report, reproducible synthetic/private-input check drivers, logs and README handoff. Private manifests, DBs and original paper payloads are excluded from Git. Next work should review the14pending legacy Method labels against primary sources and define shared ResearchProblem granularity; pending remains meaningful evidence, not permission to fabricate merges. No graph materialization, LLM API, embedding or scheduler ran.
+
+### Final integration readback
+
+Parent main fetched at `8524c60fe3c949dc8fe017ddb96d6957bd550b2b`; tree `a1329c2d08956ab95336b9e5f574b14e251df385` matches the prepared local tree. Gitlinks: kg-builder `dfb170532d53afc60e1e3f06197fc640f0f6e4a7`; research-agent `75a08ee785a02a8b6d0c17a10501f6fe076fbd57` unchanged. Working trees clean at readback. Final report-only publication does not change the reviewed implementation and does not require rerunning passed production tests. No open blocker or outstanding permission request.
