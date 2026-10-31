@@ -1,6 +1,6 @@
 # Retrieval preprocessing — 2026-10-31
 
-Status: collecting standardized metadata; implementation in progress.
+Status: standardized preprocessing pass complete; reviewed code published, Drive artifacts restored and rebuilt. Remaining contribution/classification/identity work is explicitly queued.
 
 Scope: preprocess existing 365-paper corpus as a separate reproducible retrieval index. Master SQLite, 40 Drafts, original classifications and entity-resolution history remain unchanged. Reuse OpenAlex topics/keywords/references/related-work recommendations and existing contributions. No Semantic Scholar API, paid LLM, embeddings or graph writes. Source failure is not a negative lookup. Missing metadata and missing contributions are separately reported.
 
@@ -49,3 +49,7 @@ Drive artifacts:
 All6files downloaded again; exactSHA256 matches, restoredSQLite integrityOK/FK0. Rebuilt sidecar from downloaded original backup+enrichment; all8data tables exactly equal downloaded index (build timestamp/input filename metadata intentionally differ). Original master backup hash32dc56e3cfc6e7ce531535c7d523303e3f7b96105f4ffb64e093c5ee21dc1aa5. Source/enrichment/tasks/audit/validation hashes inlogs/roundtrip.json. Wheelzipimport outside checkout verified; package source no credentials/private datasets. Temporary authorized key file removed after collection.
 
 Current work complete: standardized preprocessing pass and gap accounting. Contribution generation remains345text-ready +14needtext;6classification predictions are not performed;57identity cases defer. No claim of full semantic processing or measured graph-retrieval quality. Parent report/pin integration follows.
+
+### Final integration readback
+
+Parent main9341dad18b4d91dcda47e320b737f5953b79b8b8 has tree613976800ccfe97248480d0f32fcfc86c14cf181 matching prepared local7c47615. Child gitlinkf77d3be5a5e764ab26089a683708de6c26aa1cf6 is the reviewed code; research-agent unchanged. Original master Drive metadata rechecked:10,076,160bytes/2026-10-31T07:10:37.248Z, unchanged. [Saved recovery proof](https://drive.google.com/file/d/1b9sRNNqnELeeAfMIgZTjFd_AVNsNp6Rl/view?usp=drivesdk) metadata-readback verified after the6actual-file roundtrips and logical rebuild. This final report-only closing update changes no implementation or dataset.
