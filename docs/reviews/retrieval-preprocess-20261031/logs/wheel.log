@@ -1,0 +1,16 @@
+Processing ./research-knowledge-system/kg-builder
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: research-kg-builder
+  Building wheel for research-kg-builder (pyproject.toml): started
+  Building wheel for research-kg-builder (pyproject.toml): finished with status 'done'
+  Created wheel for research-kg-builder: filename=research_kg_builder-0.1.0-py3-none-any.whl size=26908 sha256=0a31baab02a5e8c293ac7a2c30fc8533119813c78132bfb034c6620e2435d7f7
+  Stored in directory: /root/.cache/pip/wheels/b8/7b/05/1ce824c799733ec9bc03c766ac05060ff7e1016953c01a0569
+Successfully built research-kg-builder
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: python -m pip install --upgrade pip

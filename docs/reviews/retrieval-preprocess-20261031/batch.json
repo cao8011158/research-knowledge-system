@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "batch_id": "retrieval-preprocess-20261031",
+  "repository": "cao8011158/kg-builder",
+  "branch": "review/retrieval-preprocessing-20261031",
+  "base_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+  "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+  "target_branch": "main",
+  "target_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+  "implementation_actor": "retrieval_preprocess",
+  "merge_authorized": true,
+  "authorization_reference": "User \u597d\u7684\u8bf7\u5f00\u59cb plus continuing session authorization to publish reviewed code, parent pin and private Drive data.",
+  "scope": [
+    "Separate retrieval sidecar builder/docs/tests; source metadata collection; preserve master unchanged"
+  ],
+  "acceptance_criteria": [
+    "365paper full corpus exact identity/version retention",
+    "provenance, empty/error distinctions, no fake standard IDs",
+    "indexed local point lookup with unrelated growth",
+    "source backup and Drive roundtrip"
+  ],
+  "feature_complete": true,
+  "scale_required": true,
+  "tests": [
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_retrieval_preprocess.py",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-targeted-remote.log",
+      "log_sha256": "059de400f64ae8e56f9d989f5ac3977ee3a0cfe9c6351955f444c0acf65b9322"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-fast-remote.log",
+      "log_sha256": "29f4fc61f4a72043ce6222c14d8f73fe45c737694321674163c50f42365871a8"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/reviewer-fast.log",
+      "log_sha256": "7cd3e7d8a861baa0170dc254d1e4b209361258271f140d6b3e4aeb93138bbc5c"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "command": [
+        "python",
+        "independent_acceptance.py",
+        "PRIVATE_INPUT_ROOT"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/independent-acceptance.json",
+      "log_sha256": "264009bd7030dd469dbc57a7e63eb74691332592abb60e5be2d0cf1fcf2d9781"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "command": [
+        "python",
+        "independent_acceptance.py",
+        "PRIVATE_INPUT_ROOT"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/independent-acceptance.json",
+      "log_sha256": "264009bd7030dd469dbc57a7e63eb74691332592abb60e5be2d0cf1fcf2d9781"
+    }
+  ],
+  "reviews": [
+    {
+      "round": 1,
+      "head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "remote_head_sha": "f77d3be5a5e764ab26089a683708de6c26aa1cf6",
+      "actor": "root-reviewer",
+      "verdict": "pass",
+      "counterexample_note": "Full diff;33regression;all365actualdata exact;atomic output/hash rejection and200growth developer cases;independent1000unrelated large-row scale,actualEXPLAIN;master preserved"
+    }
+  ],
+  "findings": []
+}

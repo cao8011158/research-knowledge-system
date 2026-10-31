@@ -1,7 +1,13 @@
 # research-knowledge-system
 A research knowledge system for evaluating knowledge graph-based information retrieval with LLM agents.
 
-## Latest work session — 2026-10-31
+## Latest retrieval preprocessing — 2026-10-31
+
+[Current preprocessing and recovery report](docs/reviews/retrieval-preprocess-20261031/STAGE_REPORT.md). The retrieval-first approach reuses OpenAlex standard topics/keywords and source citation/recommendation metadata; original arXiv classes and historical Drafts remain separate. A disposable sidecar indexes all365existing papers, with302confirmed OpenAlex mappings,302topic-covered papers,301keyword-covered papers and296arXiv-class-covered papers. Seven strong-ID ambiguities and50unconfirmed title candidates defer;6bounded lookups found no match.
+
+The authoritative master is unchanged (365papers/403versions/411sources/40Drafts). Sidecar retains11existing contributions across6papers;345summaries are text-ready and14needtext. Only18papers have nonempty reference lists, yielding317reference edges and just1corpus-internal reference link;3010related-work recommendations remain distinct. This is metadata preprocessing, not a completed semantic index or retrieval benchmark.33tests, independent real-data checks and actual Drive recovery/rebuild pass. Default live sources remain OpenAlex/arXiv; no Semantic Scholar or paid LLM call was made.
+
+## Historical ingestion session — 2026-10-31
 
 Read [the primary-source identity and problem-boundary review](docs/reviews/source-identity-20261031/STAGE_REPORT.md) for current implementation and validation, then the earlier reconciliation/pilot reports as historical context. The ingestion implementation was independently reviewed at `bc894774d830d98740cdd41ec58174d63c70d800`; see the newer pilot section below for the current submodule pin.
 
@@ -11,7 +17,7 @@ The private Drive database now retains365 candidate paper identities,383 version
 
 [Full-text pilot report](docs/reviews/fulltext-pilot-20261031/REPORT.md) supersedes the earlier report for current database counts. Six version-pinned manual Draft extractions were added from selected source sections/tables: A-Mem, ACE, ToolRL, DAPO, DGM and SkillWeaver. The private database now has365 paper identities,389 version/snapshot rows,397 source records,26 Draft extractions and371 relevance-review rows. All previous records remain preserved. The KG Builder ontology pilot document refines candidate properties, identity boundaries and edge contracts; the schema is not frozen and no Neo4j graph has been built.
 
-Current KG Builder submodule pin: `d99883bdba496373d1a61365a47e63dff0e5bf41`.
+Current KG Builder submodule pin: `f77d3be5a5e764ab26089a683708de6c26aa1cf6`.
 
 ## Executable schema and atomic imports — 2026-10-31
 

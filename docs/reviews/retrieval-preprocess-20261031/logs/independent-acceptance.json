@@ -1,0 +1,122 @@
+{
+  "checks": {
+    "master_hash_unchanged": true,
+    "paper_ids_exact": true,
+    "version_rows_exact": true,
+    "integrity": true,
+    "all_365_enrichment_rows_exact": true,
+    "contributions_exact": true,
+    "indexed_locality_and_growth": true
+  },
+  "cold": {
+    "vm": 1219,
+    "selects": 8,
+    "reply_bytes": 19380
+  },
+  "hot": {
+    "vm": 1219,
+    "selects": 8,
+    "reply_bytes": 19380
+  },
+  "grown_1000": {
+    "vm": 1219,
+    "selects": 8,
+    "reply_bytes": 19380
+  },
+  "missing": {
+    "vm": 206,
+    "selects": 1,
+    "reply_bytes": 4
+  },
+  "plans": [
+    "SEARCH papers USING INDEX sqlite_autoindex_papers_1 (paper_id=?)",
+    "SEARCH versions USING INDEX idx_versions_paper (paper_id=?)",
+    "USE TEMP B-TREE FOR ORDER BY",
+    "SEARCH aliases USING INDEX idx_aliases_paper (paper_id=?)",
+    "USE TEMP B-TREE FOR ORDER BY",
+    "SEARCH sources USING INDEX idx_sources_paper (paper_id=?)",
+    "USE TEMP B-TREE FOR ORDER BY",
+    "SEARCH labels USING INDEX sqlite_autoindex_labels_1 (paper_id=?)",
+    "USE TEMP B-TREE FOR LAST TERM OF ORDER BY",
+    "SEARCH edges USING COVERING INDEX sqlite_autoindex_edges_1 (paper_id=?)",
+    "SEARCH contributions USING INDEX idx_contributions_paper (paper_id=?)",
+    "USE TEMP B-TREE FOR ORDER BY",
+    "SEARCH tasks USING INDEX sqlite_autoindex_tasks_1 (paper_id=?)"
+  ],
+  "counts": {
+    "papers": 365,
+    "versions": 403,
+    "sources": 411,
+    "labels": 4706,
+    "edges": 3327,
+    "contributions": 11,
+    "tasks": 422
+  },
+  "tasks": [
+    [
+      "classification",
+      "confirmed_metadata_gap",
+      6
+    ],
+    [
+      "classification",
+      "metadata_error_defer",
+      57
+    ],
+    [
+      "contribution_summary",
+      "missing_contribution_summary",
+      345
+    ],
+    [
+      "contribution_summary",
+      "needs_text",
+      14
+    ]
+  ],
+  "coverage": [
+    [
+      "candidate_topic",
+      772,
+      365
+    ],
+    [
+      "openalex_keyword",
+      1917,
+      301
+    ],
+    [
+      "openalex_primary_topic",
+      302,
+      302
+    ],
+    [
+      "openalex_topic",
+      906,
+      302
+    ],
+    [
+      "original_class",
+      513,
+      296
+    ],
+    [
+      "original_primary_class",
+      296,
+      296
+    ]
+  ],
+  "edges": [
+    [
+      "references",
+      317,
+      18
+    ],
+    [
+      "related_work",
+      3010,
+      301
+    ]
+  ],
+  "local_reference_links": 1
+}

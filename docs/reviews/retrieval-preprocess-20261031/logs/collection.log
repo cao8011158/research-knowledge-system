@@ -1,0 +1,40 @@
+BATCH openalex 20 error works 0
+BATCH openalex 20 error works 0
+BATCH openalex 20 ok works 20
+BATCH openalex 20 ok works 40
+BATCH openalex 20 ok works 60
+BATCH openalex 20 ok works 80
+BATCH openalex 20 ok works 100
+BATCH openalex 20 ok works 120
+BATCH openalex 19 ok works 139
+BATCH doi 20 ok works 157
+BATCH doi 20 ok works 175
+BATCH doi 20 ok works 193
+BATCH doi 20 ok works 213
+BATCH doi 20 ok works 233
+BATCH doi 20 ok works 253
+BATCH doi 20 ok works 272
+BATCH doi 20 ok works 292
+BATCH doi 20 ok works 292
+BATCH doi 20 ok works 304
+BATCH doi 20 ok works 304
+BATCH doi 8 ok works 308
+BATCH locations.landing_page_url 20 ok works 309
+BATCH locations.landing_page_url 20 ok works 309
+BATCH locations.landing_page_url 17 ok works 309
+TITLE_CANDIDATE_SEARCH 57
+TITLE_DONE 10 of 57
+TITLE_DONE 20 of 57
+TITLE_DONE 30 of 57
+TITLE_DONE 40 of 57
+TITLE_DONE 50 of 57
+TITLE_DONE 57 of 57
+ARXIV_BATCH 1 ok
+ARXIV_BATCH 2 ok
+ARXIV_BATCH 3 ok
+ARXIV_BATCH 4 ok
+ARXIV_BATCH 5 ok
+ARXIV_BATCH 6 ok
+ARXIV_BATCH 7 ok
+ARXIV_BATCH 8 ok
+DONE {'matched': 305, 'error': 54, 'not_found': 6} arxiv_classes 296

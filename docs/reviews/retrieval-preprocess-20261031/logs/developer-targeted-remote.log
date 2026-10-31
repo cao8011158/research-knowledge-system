@@ -1,0 +1,9 @@
+test_digest_and_unrelated_growth (test_retrieval_preprocess.RetrievalPreprocessTests.test_digest_and_unrelated_growth) ... ok
+test_full_semantics_and_indexed_point_lookup (test_retrieval_preprocess.RetrievalPreprocessTests.test_full_semantics_and_indexed_point_lookup) ... ok
+test_missing_error_and_unrequested_are_distinct (test_retrieval_preprocess.RetrievalPreprocessTests.test_missing_error_and_unrequested_are_distinct) ... ok
+test_unknown_id_rejects_without_replacing_sidecar (test_retrieval_preprocess.RetrievalPreprocessTests.test_unknown_id_rejects_without_replacing_sidecar) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.227s
+
+OK
