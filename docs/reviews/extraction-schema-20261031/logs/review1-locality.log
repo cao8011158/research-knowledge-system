@@ -1,0 +1,63 @@
+{
+  "public_path": "ingest_extractions -> indexed version ownership and logical extraction lookup -> upsert",
+  "schema_preparation": "package schema validators prepared once per process; per-payload validation is necessary K work",
+  "measurements": [
+    {
+      "unrelated_rows": 0,
+      "unrelated_abstract_bytes": 0,
+      "call": "first",
+      "vm_instructions": 44,
+      "sql_statements": 4,
+      "selects": 2,
+      "select_rows": 2,
+      "plans": [
+        "SEARCH paper_versions USING INDEX sqlite_autoindex_paper_versions_1 (version_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_2 (paper_id=? AND version_id=? AND extractor_type=? AND extractor_version=?)"
+      ],
+      "reply_bytes": 33
+    },
+    {
+      "unrelated_rows": 0,
+      "unrelated_abstract_bytes": 0,
+      "call": "repeat",
+      "vm_instructions": 44,
+      "sql_statements": 4,
+      "selects": 2,
+      "select_rows": 2,
+      "plans": [
+        "SEARCH paper_versions USING INDEX sqlite_autoindex_paper_versions_1 (version_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_2 (paper_id=? AND version_id=? AND extractor_type=? AND extractor_version=?)"
+      ],
+      "reply_bytes": 33
+    },
+    {
+      "unrelated_rows": 1000,
+      "unrelated_abstract_bytes": 16384000,
+      "call": "first",
+      "vm_instructions": 44,
+      "sql_statements": 4,
+      "selects": 2,
+      "select_rows": 2,
+      "plans": [
+        "SEARCH paper_versions USING INDEX sqlite_autoindex_paper_versions_1 (version_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_2 (paper_id=? AND version_id=? AND extractor_type=? AND extractor_version=?)"
+      ],
+      "reply_bytes": 33
+    },
+    {
+      "unrelated_rows": 1000,
+      "unrelated_abstract_bytes": 16384000,
+      "call": "repeat",
+      "vm_instructions": 44,
+      "sql_statements": 4,
+      "selects": 2,
+      "select_rows": 2,
+      "plans": [
+        "SEARCH paper_versions USING INDEX sqlite_autoindex_paper_versions_1 (version_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_2 (paper_id=? AND version_id=? AND extractor_type=? AND extractor_version=?)"
+      ],
+      "reply_bytes": 33
+    }
+  ],
+  "scope": "SQLite VM instruction counts; no LLM/network; synthetic unrelated growth, not a graph-scale claim"
+}

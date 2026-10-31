@@ -1,0 +1,10 @@
+{
+  "module_loaded_from_installed_wheel": true,
+  "jsonschema_version": "4.26.0",
+  "packaged_schemas_valid": 2,
+  "real_records_validated": 26,
+  "profiles": {
+    "legacy": 20,
+    "pilot": 6
+  }
+}

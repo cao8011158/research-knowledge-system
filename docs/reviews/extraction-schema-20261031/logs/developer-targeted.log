@@ -1,0 +1,16 @@
+commit=8fdf4b387a992e624f0c2fa8bcd36d285993f666
+tree=66b9153f8c530cc80cc2431ac69e662e44a74e23
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python -m unittest discover -s tests -p test_extraction_validation.py -v
+test_cli_validates_before_db_creation (test_extraction_validation.ValidationTests.test_cli_validates_before_db_creation) ... ok
+test_idempotence_existing_id_and_outer_transaction (test_extraction_validation.ValidationTests.test_idempotence_existing_id_and_outer_transaction) ... ok
+test_invalid_second_and_sql_failure_atomic (test_extraction_validation.ValidationTests.test_invalid_second_and_sql_failure_atomic) ... ok
+test_legacy_and_unknown_version (test_extraction_validation.ValidationTests.test_legacy_and_unknown_version) ... ok
+test_reconcile_remaps_version_scoped_payload_refs (test_extraction_validation.ValidationTests.test_reconcile_remaps_version_scoped_payload_refs) ... ok
+test_review_reconcile_and_unknown_table (test_extraction_validation.ValidationTests.test_review_reconcile_and_unknown_table) ... ok
+test_valid_and_semantic_failures (test_extraction_validation.ValidationTests.test_valid_and_semantic_failures) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.105s
+
+OK
+exit_code=0

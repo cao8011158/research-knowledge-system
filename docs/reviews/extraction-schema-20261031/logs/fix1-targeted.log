@@ -1,0 +1,25 @@
+commit=a28c6e390de849f1164d4adc0ae555ae2c17f506
+tree=b9499954bf6ed0aa326214348c6ddf3eb73497f7
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python -m unittest discover -s tests -p test_extraction_validation.py -v
+test_cli_validates_before_db_creation (test_extraction_validation.ValidationTests.test_cli_validates_before_db_creation) ... ok
+test_idempotence_existing_id_and_outer_transaction (test_extraction_validation.ValidationTests.test_idempotence_existing_id_and_outer_transaction) ... ok
+test_invalid_second_and_sql_failure_atomic (test_extraction_validation.ValidationTests.test_invalid_second_and_sql_failure_atomic) ... ok
+test_legacy_and_unknown_version (test_extraction_validation.ValidationTests.test_legacy_and_unknown_version) ... ok
+test_reconcile_remaps_version_scoped_payload_refs (test_extraction_validation.ValidationTests.test_reconcile_remaps_version_scoped_payload_refs) ... ok
+test_review_reconcile_and_unknown_table (test_extraction_validation.ValidationTests.test_review_reconcile_and_unknown_table) ... ok
+test_valid_and_semantic_failures (test_extraction_validation.ValidationTests.test_valid_and_semantic_failures) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.124s
+
+OK
+exit_code=0
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python ../docs/reviews/extraction-schema-20261031/review_counterexamples.py --repo . --expect-fixed
+{
+  "ids_remapped": true,
+  "summary_preserved": true,
+  "method_description_preserved": true,
+  "extension_quote_preserved": true,
+  "empty_evidence_rejected": true
+}
+exit_code=0

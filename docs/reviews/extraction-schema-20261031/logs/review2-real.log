@@ -1,0 +1,40 @@
+{
+  "source_sha256": "38e6c2f0afa41cc66a506946137f0e971dd06746968c3acfc2cf761276ee164d",
+  "validated_profiles": {
+    "legacy": 20,
+    "pilot": 6
+  },
+  "drafts_preserved": 26,
+  "relevance_reviews_preserved": 371,
+  "negative_cases": [
+    "empty_assertion_evidence",
+    "empty_relation_evidence",
+    "method_name_type",
+    "method_description_missing",
+    "metric_direction_type",
+    "artifact_kind_invalid",
+    "evaluation_setup_type",
+    "unknown_schema",
+    "boolean_measurement",
+    "nonfinite_measurement",
+    "unresolved_evidence",
+    "duplicate_evidence",
+    "wrong_target_kind",
+    "unit_mismatch",
+    "capture_hash_mismatch",
+    "wrong_scoped_key",
+    "unknown_db_version_atomic",
+    "mid_write_failure_atomic",
+    "nested_failure",
+    "unsupported_table",
+    "unsupported_column"
+  ],
+  "cli_invalid_second_atomic": true,
+  "cli_invalid_input_no_database": true,
+  "caller_transaction_preserved": true,
+  "all_original_active_rows_unchanged": true,
+  "original_provenance_retained": true,
+  "repeated_reconciliation_preserves_active_rows": true,
+  "input_bytes_unchanged": true,
+  "reconciled_integrity": "ok"
+}

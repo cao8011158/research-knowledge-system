@@ -1,0 +1,63 @@
+test_cli_validates_before_db_creation (test_extraction_validation.ValidationTests.test_cli_validates_before_db_creation) ... ok
+test_idempotence_existing_id_and_outer_transaction (test_extraction_validation.ValidationTests.test_idempotence_existing_id_and_outer_transaction) ... ok
+test_invalid_second_and_sql_failure_atomic (test_extraction_validation.ValidationTests.test_invalid_second_and_sql_failure_atomic) ... ok
+test_legacy_and_unknown_version (test_extraction_validation.ValidationTests.test_legacy_and_unknown_version) ... ok
+test_reconcile_remaps_version_scoped_payload_refs (test_extraction_validation.ValidationTests.test_reconcile_remaps_version_scoped_payload_refs) ... ok
+test_review_reconcile_and_unknown_table (test_extraction_validation.ValidationTests.test_review_reconcile_and_unknown_table) ... ok
+test_valid_and_semantic_failures (test_extraction_validation.ValidationTests.test_valid_and_semantic_failures) ... ok
+test_conflict_rollback_and_version_order (test_ingestion.IngestionTests.test_conflict_rollback_and_version_order) ... ok
+test_default_collectors_exclude_semantic_scholar (test_ingestion.IngestionTests.test_default_collectors_exclude_semantic_scholar) ... ok
+test_identifiers_and_source_enrichment (test_ingestion.IngestionTests.test_identifiers_and_source_enrichment) ... ok
+test_locality_index_plan_and_unrelated_growth (test_ingestion.IngestionTests.test_locality_index_plan_and_unrelated_growth) ... ok
+test_output_paths_and_source_history (test_ingestion.IngestionTests.test_output_paths_and_source_history) ... ok
+test_reconciliation_preserves_extractions_and_is_deterministic (test_ingestion.IngestionTests.test_reconciliation_preserves_extractions_and_is_deterministic) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.428s
+
+OK
+{
+  "started_at": "2026-10-31T05:30:49.052027+00:00",
+  "completed_at": "2026-10-31T05:30:49.057949+00:00",
+  "mode": "api_first_page",
+  "since": "2025-01-01",
+  "until": "2026-10-31",
+  "per_query": 10,
+  "db_before": {
+    "papers": 0,
+    "versions": 0,
+    "extractions": 0,
+    "sources": 0
+  },
+  "db_after": {
+    "papers": 0,
+    "versions": 0,
+    "extractions": 0,
+    "sources": 0
+  },
+  "by_source": {},
+  "queries": [
+    {
+      "source": "openalex",
+      "topic": "memory",
+      "query": "term",
+      "received": 0,
+      "stored": 0,
+      "date_filtered": 0,
+      "unknown_date": 0,
+      "errors": []
+    },
+    {
+      "source": "arxiv",
+      "topic": "memory",
+      "query": "term",
+      "received": 0,
+      "stored": 0,
+      "date_filtered": 0,
+      "unknown_date": 0,
+      "errors": []
+    }
+  ],
+  "successful_queries": 2,
+  "failed_queries": 0
+}
