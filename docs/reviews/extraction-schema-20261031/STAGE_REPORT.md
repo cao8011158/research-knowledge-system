@@ -1,6 +1,6 @@
 # Extraction schema and atomic import — 2026-10-31
 
-Current status: independent review passed in round2; kg-builder main fast-forwarded to `f87c460924aaca04e9500c79ed82c0991fedf8e6`. Parent integration and evidence publication follow below.
+Current status: complete. Review passed in round2; kg-builder main is `f87c460924aaca04e9500c79ed82c0991fedf8e6`. Parent integration is published at `8759c6f3a1f9d9e8ba54451bcf5bb5f8f9274781`, with the reviewed gitlink and validation evidence. The final handoff-only commit follows that integration commit.
 
 Stages: baseline → developer candidate → review1 (two P2 findings) → developer fixes → review2/pass → publication and handoff.
 
@@ -86,3 +86,7 @@ The private validation result is saved at [schema_validation_20261031.json](http
 Parent integration consists of the reviewed gitlink, README handoff and this cumulative report with synthetic reproducible checks and full logs. Code and reports contain no private source payloads, SQLite files or credentials. Review findings/earlier failure logs are retained.
 
 Next authorized planning boundary: review cross-paper Method/ResearchProblem/Artifact aliases and add varied source-grounded examples before freezing the ontology or materializing a graph. This batch implements admission/retention correctness only; source-checking a reported result is not reproducing an experiment. No LLM API, scheduler, embedding or Neo4j execution occurred.
+
+### Final integration readback
+
+Fetched parent main integration `8759c6f3a1f9d9e8ba54451bcf5bb5f8f9274781`; tree `c1aa5cc7b2724205f1e173ef35a22ac2837fee63` matches the prepared local tree. Its kg-builder gitlink is the independently reviewed `f87c460924aaca04e9500c79ed82c0991fedf8e6`; research-agent remains `75a08ee785a02a8b6d0c17a10501f6fe076fbd57`. Working trees were clean at readback. This closing report update changes no implementation or dependency and therefore does not require repeating passed production tests. No outstanding blocking issue or permission request remains.
