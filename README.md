@@ -1,6 +1,12 @@
 # research-knowledge-system
 A research knowledge system for evaluating knowledge graph-based information retrieval with LLM agents.
 
+## Current research scope — 2026-10-31
+
+First public release2025-01-01onward. Active domains: **Agent Memory**, **Context Management & Compression**, and **Skill / Self-improving Skill**. Tool Use, RL Post-training and general Recursive Self-improvement are no longer independent discovery targets; retain cross-domain papers only when substantively focused on one of the three selected areas. [Current scope and boundaries](kg-builder/docs/CURRENT_RESEARCH_SCOPE.md).
+
+Discovery config now has3domains/9queries, verified through the actual CLI config loader. The365-paper historical candidate pool and prior annotations are preserved; scoped re-screening before further LLM extraction remains to be done. Historical six-domain reports below are not the active scope.
+
 ## Latest retrieval preprocessing — 2026-10-31
 
 [Current preprocessing and recovery report](docs/reviews/retrieval-preprocess-20261031/STAGE_REPORT.md). The retrieval-first approach reuses OpenAlex standard topics/keywords and source citation/recommendation metadata; original arXiv classes and historical Drafts remain separate. A disposable sidecar indexes all365existing papers, with304confirmed OpenAlex mappings,304source-topic-covered papers,303source-keyword-covered papers and296arXiv-class-covered papers. A bounded50-paper follow-up confirmedDAPO/ToolRL publication mappings;48remaining papers received explicitly assistant-predicted labels from the existingOpenAlex vocabulary. Including predictions,352papers have topic labels and351have keywords. Seven strong-ID ambiguities and6earlier classification gaps remain separate.
@@ -17,7 +23,7 @@ The private Drive database now retains365 candidate paper identities,383 version
 
 [Full-text pilot report](docs/reviews/fulltext-pilot-20261031/REPORT.md) supersedes the earlier report for current database counts. Six version-pinned manual Draft extractions were added from selected source sections/tables: A-Mem, ACE, ToolRL, DAPO, DGM and SkillWeaver. The private database now has365 paper identities,389 version/snapshot rows,397 source records,26 Draft extractions and371 relevance-review rows. All previous records remain preserved. The KG Builder ontology pilot document refines candidate properties, identity boundaries and edge contracts; the schema is not frozen and no Neo4j graph has been built.
 
-Current KG Builder submodule pin: `f77d3be5a5e764ab26089a683708de6c26aa1cf6`.
+Current KG Builder submodule pin: `fc114851d5017aed7c8d5477b58b2ff8dac6bbfa`.
 
 ## Executable schema and atomic imports — 2026-10-31
 
