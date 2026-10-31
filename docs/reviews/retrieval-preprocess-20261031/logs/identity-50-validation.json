@@ -1,0 +1,116 @@
+{
+  "checks": {
+    "other_315_papers_related_rows_unchanged": true,
+    "all_contributions_unchanged": true,
+    "master_unchanged": true,
+    "two_confirmed_and_48_explicit_predictions": true,
+    "integrity": true
+  },
+  "papers": 365,
+  "match_status_counts": [
+    [
+      "error",
+      7
+    ],
+    [
+      "matched",
+      304
+    ],
+    [
+      "not_found",
+      54
+    ]
+  ],
+  "label_coverage": [
+    [
+      "candidate_topic",
+      365,
+      772
+    ],
+    [
+      "openalex_keyword",
+      303,
+      1926
+    ],
+    [
+      "openalex_primary_topic",
+      304,
+      304
+    ],
+    [
+      "openalex_topic",
+      304,
+      912
+    ],
+    [
+      "original_class",
+      296,
+      513
+    ],
+    [
+      "original_primary_class",
+      296,
+      296
+    ],
+    [
+      "predicted_openalex_keyword",
+      48,
+      95
+    ],
+    [
+      "predicted_openalex_topic",
+      48,
+      96
+    ]
+  ],
+  "task_counts": [
+    [
+      "classification",
+      "confirmed_metadata_gap",
+      6
+    ],
+    [
+      "classification",
+      "metadata_error_defer",
+      7
+    ],
+    [
+      "classification",
+      "prediction_added",
+      48
+    ],
+    [
+      "contribution_summary",
+      "missing_contribution_summary",
+      345
+    ],
+    [
+      "contribution_summary",
+      "needs_text",
+      14
+    ]
+  ],
+  "source_dates_in_target": [
+    [
+      null,
+      1
+    ],
+    [
+      "2025-03",
+      1
+    ],
+    [
+      "2025-04",
+      1
+    ],
+    [
+      "2025-10",
+      1
+    ],
+    [
+      "2026-10",
+      46
+    ]
+  ],
+  "index_sha256": "505a3eb9d65cdd0d2b3bf2755749196bf87b2f4ad1b4f70e63647531dd8346e0"
+}

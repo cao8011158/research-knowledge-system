@@ -1,6 +1,6 @@
 # Retrieval preprocessing — 2026-10-31
 
-Status: standardized preprocessing pass complete; reviewed code published, Drive artifacts restored and rebuilt. Remaining contribution/classification/identity work is explicitly queued.
+Status: preprocessing and bounded50-paper identity follow-up complete. Current index has304source-matched papers and48explicitly predicted classifications; remaining7ambiguous identities and6previous classification gaps are separate. Contribution generation remains queued.
 
 Scope: preprocess existing 365-paper corpus as a separate reproducible retrieval index. Master SQLite, 40 Drafts, original classifications and entity-resolution history remain unchanged. Reuse OpenAlex topics/keywords/references/related-work recommendations and existing contributions. No Semantic Scholar API, paid LLM, embeddings or graph writes. Source failure is not a negative lookup. Missing metadata and missing contributions are separately reported.
 
@@ -53,3 +53,21 @@ Current work complete: standardized preprocessing pass and gap accounting. Contr
 ### Final integration readback
 
 Parent main9341dad18b4d91dcda47e320b737f5953b79b8b8 has tree613976800ccfe97248480d0f32fcfc86c14cf181 matching prepared local7c47615. Child gitlinkf77d3be5a5e764ab26089a683708de6c26aa1cf6 is the reviewed code; research-agent unchanged. Original master Drive metadata rechecked:10,076,160bytes/2026-10-31T07:10:37.248Z, unchanged. [Saved recovery proof](https://drive.google.com/file/d/1b9sRNNqnELeeAfMIgZTjFd_AVNsNp6Rl/view?usp=drivesdk) metadata-readback verified after the6actual-file roundtrips and logical rebuild. This final report-only closing update changes no implementation or dataset.
+
+## Stage 4 — bounded follow-up of the50unconfirmed title candidates
+
+User 好的继续 accepts one bounded DOI/source-ID/title-author matching pass, independent-paper fallback and explicitly predicted retrieval labels. Data-only step; reusable source code remainsf77d3be5a5e764ab26089a683708de6c26aa1cf6. No production implementation change or new formal code-review round is claimed.
+
+All49arXiv-bearing targets checked against actual cachedAtomentries:0additional DOI fields. The no-arXiv/no-DOI SemanticScholar record retainsCorpusId285475193/DBLPconf/nora/SinghY25; DBLP and the publisher resolve it toCEUR-WSVol4162/paper4.pdf, no DOI asserted. Five new boundedOpenAlexversioned-arXiv/publisherURLfilter batches returnedHTTP200/0results. Existing title candidates were checked against source-native title/authors/year.
+
+Two matches confirmed: DAPO(arxiv2503.14476)→W7196953391 and ToolRL(arxiv2504.13958)→W7196943802. FreshOpenAlexrecordsHTTP200; exactnormalized titles,2025publicationyears, at least5matching fullauthornames and samefirst/lastauthor verified againstarXiv. Matchbasis title_authors, not a fabricatedstrongID. PublishedDOIs retained as aliases with explicitmatchprovenance, not proof of byte-identical paper versions.
+
+Remaining48targets are bounded-unmatched, not requestsfailed or a claim ofglobalabsence.46targets aredatedOctober28–29,2026; indexinglag is plausible but not individually proven.48papers receive96broadtopic and95keyword predictions chosen manually byassistant fromIDs/names already present in the actualOpenAlex vocabulary snapshot. Kinds predicted_openalex_topic/predicted_openalex_keyword andorigin assistant_prediction_from_openalex_vocabulary distinguish these fromsourceassignments; scoreNULL, no fabricatedconfidence, workID or newstandardID. Classified fromtitle/existingabstract; theCEURpaper also usespublisherabstract. These are retrievallabels, not authorclaims, ontologyidentity or validated scientificjudgments.
+
+All365papers retained; officialOpenAlexmatch/topiccoverage304, officialkeywordcoverage303; combining explicitpredictions gives352topic-covered and351keyword-covered papers. Other315papers and everyrelatedrow identical; all11contributions unchanged, originalmasterSHA unchanged, integrityOK/FK0. Remainingtasks:7identityambiguities deferred,6previousclassificationgaps,345text-readycontributions/14needtext.48classificationrows markedprediction_added, not pendingLLMcalls.
+
+Current[retrievalindex](https://drive.google.com/file/d/11Sds7d838toBqjuj4UWxJKbB2FI8EnDg/view?usp=drivesdk) replacedinplace onlyafter[before-stepbackup](https://drive.google.com/file/d/1Ybg8zoHO3hVTWPDuMxVV-RdbBqcoNYHm/view?usp=drivesdk). Newindex6,422,528bytes/SHA256505a3eb9d65cdd0d2b3bf2755749196bf87b2f4ad1b4f70e63647531dd8346e0.
+
+PrivateDrive [identity/predictionannotations](https://drive.google.com/file/d/17bdCjvHmBklFXOp4MdUdelmE7QXk9ipE/view?usp=drivesdk),[updatedenrichment](https://drive.google.com/file/d/1ofSxzMCL39JpXxQmj7yQOIZ3aFAomuzw/view?usp=drivesdk),[validation](https://drive.google.com/file/d/1Ge8JES5bGKkmdz8Fcn7BWskwfCRsGsis/view?usp=drivesdk),[updatedtasks](https://drive.google.com/file/d/17lZ_R77zyO4EOtmHH6wdzMP2ETu6CY_a/view?usp=drivesdk). Originalmaster and allpreviousartifacts retained. Sourcechecksused[DBLP](https://dblp.org/rec/conf/nora/SinghY25) and[publisher](https://ceur-ws.org/Vol-4162/paper4.pdf); noSemanticScholarAPI or paidLLMcall.
+
+All5new/current artifacts were downloaded and exacthash-compared; restoredindex integrityOK/FK0. Proof logs/identity-50-roundtrip.json. This data-only follow-up does not rerun or relabel the historical code-review/test results.

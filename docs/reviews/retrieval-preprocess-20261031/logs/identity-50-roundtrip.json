@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "file": "retrieval_index.sqlite3",
+      "id": "11Sds7d838toBqjuj4UWxJKbB2FI8EnDg",
+      "bytes": 6422528,
+      "sha256": "505a3eb9d65cdd0d2b3bf2755749196bf87b2f4ad1b4f70e63647531dd8346e0"
+    },
+    {
+      "file": "annotations.json",
+      "id": "17bdCjvHmBklFXOp4MdUdelmE7QXk9ipE",
+      "bytes": 50908,
+      "sha256": "b928e14a05b56e6b40babca42dd2fc1ad798126eb3501375f62e7b02fb2f791e"
+    },
+    {
+      "file": "enrichment.json",
+      "id": "1ofSxzMCL39JpXxQmj7yQOIZ3aFAomuzw",
+      "bytes": 2541257,
+      "sha256": "57d141cc6d49c449a364c749839ef4fa8ec5dda7c555b033e4f3811f51fd3a9e"
+    },
+    {
+      "file": "validation.json",
+      "id": "1Ge8JES5bGKkmdz8Fcn7BWskwfCRsGsis",
+      "bytes": 1631,
+      "sha256": "040e2589e84292c1c6bcbe03bc8b06030867d79e66e5ea342d83521d677d2311"
+    },
+    {
+      "file": "remaining_tasks.json",
+      "id": "17lZ_R77zyO4EOtmHH6wdzMP2ETu6CY_a",
+      "bytes": 123446,
+      "sha256": "04870492abb195b09e6d8a664249e14e437b9c180ba49577b44564c6509a2b32"
+    }
+  ],
+  "integrity": "ok",
+  "foreign_keys": 0
+}
