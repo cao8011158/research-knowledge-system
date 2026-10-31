@@ -1,0 +1,573 @@
+{
+  "scope": "Actual v2 private leaf/compound support and parent closure; indexed SQLite plans/VM/fetched text versus reply bytes. No full graph or server/MCP interface tested.",
+  "measurements": [
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "first",
+      "case": "leaf",
+      "vm_instructions": 65,
+      "selects": 4,
+      "internal_reads": [
+        {
+          "rows": 1,
+          "text_bytes": 910,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 763,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 996,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "first",
+      "case": "compound",
+      "vm_instructions": 158,
+      "selects": 9,
+      "internal_reads": [
+        {
+          "rows": 2,
+          "text_bytes": 1743,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 1138,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 707,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 3107,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 563,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 592,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 767,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        }
+      ],
+      "reply_bytes": 4902,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "first",
+      "case": "missing_entity",
+      "vm_instructions": 19,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 54,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "first",
+      "case": "missing_mentions",
+      "vm_instructions": 20,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "repeat",
+      "case": "leaf",
+      "vm_instructions": 65,
+      "selects": 4,
+      "internal_reads": [
+        {
+          "rows": 1,
+          "text_bytes": 910,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 763,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 996,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "repeat",
+      "case": "compound",
+      "vm_instructions": 152,
+      "selects": 9,
+      "internal_reads": [
+        {
+          "rows": 2,
+          "text_bytes": 1743,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 1138,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 707,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 3107,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 563,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 592,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 767,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        }
+      ],
+      "reply_bytes": 4902,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "repeat",
+      "case": "missing_entity",
+      "vm_instructions": 19,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 54,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 0,
+      "unrelated_large_text_bytes": 0,
+      "temperature": "repeat",
+      "case": "missing_mentions",
+      "vm_instructions": 20,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "first",
+      "case": "leaf",
+      "vm_instructions": 65,
+      "selects": 4,
+      "internal_reads": [
+        {
+          "rows": 1,
+          "text_bytes": 910,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 763,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 996,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "first",
+      "case": "compound",
+      "vm_instructions": 152,
+      "selects": 9,
+      "internal_reads": [
+        {
+          "rows": 2,
+          "text_bytes": 1743,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 1138,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 707,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 3107,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 563,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 592,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 767,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        }
+      ],
+      "reply_bytes": 4902,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "first",
+      "case": "missing_entity",
+      "vm_instructions": 19,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 54,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "first",
+      "case": "missing_mentions",
+      "vm_instructions": 20,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "repeat",
+      "case": "leaf",
+      "vm_instructions": 65,
+      "selects": 4,
+      "internal_reads": [
+        {
+          "rows": 1,
+          "text_bytes": 910,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 763,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 996,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "repeat",
+      "case": "compound",
+      "vm_instructions": 152,
+      "selects": 9,
+      "internal_reads": [
+        {
+          "rows": 2,
+          "text_bytes": 1743,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 1138,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 707,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 3107,
+          "source_payload": true
+        },
+        {
+          "rows": 1,
+          "text_bytes": 563,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 592,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 767,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 711,
+          "source_payload": false
+        },
+        {
+          "rows": 1,
+          "text_bytes": 10308,
+          "source_payload": true
+        }
+      ],
+      "reply_bytes": 4902,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)",
+        "SEARCH extraction_records USING INDEX sqlite_autoindex_extraction_records_1 (extraction_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "repeat",
+      "case": "missing_entity",
+      "vm_instructions": 19,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 54,
+      "plans": [
+        "SEARCH entity_resolution_entities USING INDEX sqlite_autoindex_entity_resolution_entities_1 (batch_id=? AND entity_id=?)"
+      ]
+    },
+    {
+      "unrelated_rows_per_table": 1000,
+      "unrelated_large_text_bytes": 49152000,
+      "temperature": "repeat",
+      "case": "missing_mentions",
+      "vm_instructions": 20,
+      "selects": 1,
+      "internal_reads": [
+        {
+          "rows": 0,
+          "text_bytes": 0,
+          "source_payload": false
+        }
+      ],
+      "reply_bytes": 2,
+      "plans": [
+        "SEARCH entity_resolution_mentions USING INDEX sqlite_autoindex_entity_resolution_mentions_1 (batch_id=? AND extraction_id=?)"
+      ]
+    }
+  ]
+}

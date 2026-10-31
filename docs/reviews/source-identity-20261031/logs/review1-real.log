@@ -1,0 +1,32 @@
+{
+  "input_sha256": "f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8",
+  "old_drafts_preserved": 26,
+  "new_identity_only_drafts": 14,
+  "total_drafts": 40,
+  "old_relevance_reviews_preserved": 371,
+  "old_v1_batch_rows_and_lookup_unchanged": true,
+  "v2_entities": 74,
+  "v2_mentions": 105,
+  "mapped": 99,
+  "composite_labels": 4,
+  "not_a_method": 2,
+  "insufficient_evidence": 0,
+  "problem_entities": 30,
+  "reviewer_taxonomy_edges": 25,
+  "all_current": true,
+  "negative_cases": [
+    "self_parent",
+    "unknown_parent",
+    "wrong_parent_kind",
+    "missing_taxonomy_basis",
+    "composite_as_single",
+    "unknown_component",
+    "wrong_source_hash",
+    "injected_write_failure"
+  ],
+  "parent_and_component_stale_closure": true,
+  "atomic_immutable_and_outer_transaction": true,
+  "reconcile_repeat_preserve_all_active_rows": true,
+  "integrity": "ok",
+  "fk_violations": 0
+}

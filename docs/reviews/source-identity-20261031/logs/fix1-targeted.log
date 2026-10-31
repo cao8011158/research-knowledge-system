@@ -1,0 +1,23 @@
+commit=b0ffa08c52f41faa19cbb576de0e02a247c18a28
+tree=d1063f8e9c21c7d52327e7db009a5cfd9f47b214
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python -m unittest discover -s tests -p test_entity_resolution_v2.py -v
+test_compound_cross_kind_and_non_method (test_entity_resolution_v2.ResolutionV2Tests.test_compound_cross_kind_and_non_method) ... ok
+test_deep_parent_chain_is_bounded_by_actual_closure (test_entity_resolution_v2.ResolutionV2Tests.test_deep_parent_chain_is_bounded_by_actual_closure) ... ok
+test_explicit_entity_index_and_unrelated_growth (test_entity_resolution_v2.ResolutionV2Tests.test_explicit_entity_index_and_unrelated_growth) ... ok
+test_hierarchy_rejections (test_entity_resolution_v2.ResolutionV2Tests.test_hierarchy_rejections) ... ok
+test_outcome_and_components_negative (test_entity_resolution_v2.ResolutionV2Tests.test_outcome_and_components_negative) ... ok
+test_problem_hierarchy_diamond_and_stale_parent (test_entity_resolution_v2.ResolutionV2Tests.test_problem_hierarchy_diamond_and_stale_parent) ... ok
+test_v1_opaque_fields_named_like_v2_are_not_interpreted (test_entity_resolution_v2.ResolutionV2Tests.test_v1_opaque_fields_named_like_v2_are_not_interpreted) ... ok
+test_v1_shape_and_v2_reconciliation_retention (test_entity_resolution_v2.ResolutionV2Tests.test_v1_shape_and_v2_reconciliation_retention) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.312s
+
+OK
+exit_code=0
+$ PYTHONPATH=src /tmp/kg-builder-test-venv/bin/python parent/.../v1_compatibility_check.py --repo . --db private_input --work /tmp/kg-si-compat-fix1-post --expect-fixed
+{
+  "v1_opaque_outcome_preserved": true,
+  "v1_opaque_parent_preserved": true
+}
+exit_code=0

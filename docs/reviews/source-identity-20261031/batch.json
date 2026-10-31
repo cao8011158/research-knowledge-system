@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "batch_id": "RKG-source-identity-20261031",
+  "repository": "cao8011158/kg-builder",
+  "branch": "work/source-identity-20261031",
+  "base_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+  "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+  "target_branch": "main",
+  "target_sha": "dfb170532d53afc60e1e3f06197fc640f0f6e4a7",
+  "implementation_actor": "ingestion_fix",
+  "merge_authorized": true,
+  "authorization_reference": "User \u597d\u7684\u8bf7\u7ee7\u7eed accepts14primary identity checks and26problem-boundary adjudications; earlier session authorizes code push/main gitlink update and backed-up private Drive persistence.",
+  "scope": [
+    "source-grounded identity/problem review",
+    "additive resolution v0.2 outcomes and hierarchy",
+    "indexed version-dispatched queries and source closure",
+    "history-preserving Drive persistence and parent handoff"
+  ],
+  "acceptance_criteria": [
+    "14fixedv1sources match titles/hashes and selected anchors",
+    "old26Drafts371reviews and v1batch preserved;14new partialDrafts explicit",
+    "14legacyMethod labels:8mapped4compound2nonmethod;26Problem mentions adjudicated",
+    "candidate Problem parent links acyclic and explicitly reviewer_taxonomy",
+    "v1opaque extensions unchanged;v2semantics version-dispatched",
+    "atomicity/staleclosure/reconciliation/installedwheel/indexedgrowth checks pass",
+    "Drive raw-byte backup/restore verified; no LLMAPI/graph execution"
+  ],
+  "feature_complete": true,
+  "scale_required": true,
+  "tests": [
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_entity_resolution_v2.py",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-targeted.log",
+      "log_sha256": "f312ff4c5e71d624c5b5d0113b2e038d8924c532ee23557964419e9708100837"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/developer-fast.log",
+      "log_sha256": "ce3e16484b72fd39fa2a9143486f2c724cd82656a5023d586e9a37fbe3e16e78"
+    },
+    {
+      "role": "developer",
+      "kind": "targeted",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_entity_resolution_v2.py",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/fix1-targeted.log",
+      "log_sha256": "4c4f32c2e7d0ad3e4ae59561b064e0079c4e2f601ac5e9a858634fad828d77a9"
+    },
+    {
+      "role": "developer",
+      "kind": "fast_regression",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "env",
+        "PYTHONPATH=src",
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/fix1-fast.log",
+      "log_sha256": "32e6f32f61ac63d053896944c89b34866b18e4ab63c0f373030d29ffd65c72bc"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-fast.log",
+      "log_sha256": "eb479818be63175db5df4cb01438eea1664721ea30530a98d1cc653a2b6ec810"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/independent_acceptance.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--input",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/input.sqlite3",
+        "--prepared",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/prepared.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/resolution_v2_manifest.json",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/review1"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-real.log",
+      "log_sha256": "9c38e1849d11cb42d69b8f9f546e27c077ad2af0fb2cf8730a8e619b4ed5b50e"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/locality_checks.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/review1/annotated.sqlite3"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review1-locality.log",
+      "log_sha256": "7c1ea5f7b7725fb714a2596b5d0c3e1db2a7140d4f824aa251cefd6f453bbbb7"
+    },
+    {
+      "role": "reviewer",
+      "kind": "fast_regression",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-fast.log",
+      "log_sha256": "959c2b2cf7670143d40fb6c922b7480141e994eada14e09ef2327eb5a4e5b5d9"
+    },
+    {
+      "role": "reviewer",
+      "kind": "feature_acceptance",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/independent_acceptance.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--input",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/input.sqlite3",
+        "--prepared",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/prepared.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/resolution_v2_manifest.json",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/review2"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-real.log",
+      "log_sha256": "9c38e1849d11cb42d69b8f9f546e27c077ad2af0fb2cf8730a8e619b4ed5b50e"
+    },
+    {
+      "role": "reviewer",
+      "kind": "scale",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/locality_checks.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/review2/annotated.sqlite3"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-locality.log",
+      "log_sha256": "7693ea852cbe665dd327ffdd9cd0b28c23d5670d7941dbf2b92490330b7dc055"
+    },
+    {
+      "role": "reviewer",
+      "kind": "counterexample",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/v1_compatibility_check.py",
+        "--repo",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/kg-builder",
+        "--db",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/input.sqlite3",
+        "--work",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/compat2",
+        "--expect-fixed"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-compatibility.log",
+      "log_sha256": "e187ff9975ca2cf4b59a29a7feb55bcde6ad9591601583afc92af980e7536187"
+    },
+    {
+      "role": "reviewer",
+      "kind": "package_probe",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-si-installed-review-20261031/bin/python",
+        "/workspace/scratch/fb0b6c3eb637/research-knowledge-system/docs/reviews/source-identity-20261031/package_loading_check.py",
+        "--prepared",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/prepared.sqlite3",
+        "--manifest",
+        "/workspace/scratch/fb0b6c3eb637/private_data/source_identity_20261031/resolution_v2_manifest.json",
+        "--expected-prefix",
+        "/tmp/kg-si-installed-review-20261031/"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/review2-package-probe.log",
+      "log_sha256": "44fd46d61092ed2687dca2ca01cf1a173a389bb8db9572841dcb9b144184d43b"
+    },
+    {
+      "role": "reviewer",
+      "kind": "drive_roundtrip",
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "command": [
+        "/tmp/kg-builder-test-venv/bin/python",
+        "-"
+      ],
+      "result": "pass",
+      "exit_code": 0,
+      "log": "logs/drive-roundtrip.log",
+      "log_sha256": "9d966c6fcddb6cae5a01cb79c75a1a9259fb8cb207cc9deceb9f0dce2c982353",
+      "stdin_note": "Authenticated seven raw-file downloads; exact SHA256/bytes, SQLite integrity/FK, v1/v2 all-current queries verified."
+    }
+  ],
+  "reviews": [
+    {
+      "round": 1,
+      "head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "remote_head_sha": "ef73f9b4a3b7506b68aad27fbbe6739a5eccd6d7",
+      "actor": "root-reviewer",
+      "verdict": "changes_required",
+      "counterexample_note": "Actual105 review data and28tests pass, but valid v1opaque v2-name extensions causeKeyError/falsestale."
+    },
+    {
+      "round": 2,
+      "head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "remote_head_sha": "d99883bdba496373d1a61365a47e63dff0e5bf41",
+      "actor": "root-reviewer",
+      "verdict": "pass",
+      "counterexample_note": "SI-01 closed via indexed stored-version dispatch;v1extension repro,v2real105,29tests,installed4profiles,parent/componentclosure and unrelated-growth checks pass."
+    }
+  ],
+  "findings": [
+    {
+      "id": "SI-01",
+      "severity": "P2",
+      "confirmed": true,
+      "blocking": true,
+      "state": "resolved",
+      "location": "entity_resolution.py getters version dispatch",
+      "discovered_in_batch": "RKG-source-identity-20261031",
+      "owner_step": "source identity/problem boundaries",
+      "owner_batch": "RKG-source-identity-20261031",
+      "origin": "current batch",
+      "dependency_core": false,
+      "route": "bounded version dispatch fix and round2"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "files": {
+    "live": {
+      "sha256": "32dc56e3cfc6e7ce531535c7d523303e3f7b96105f4ffb64e093c5ee21dc1aa5",
+      "bytes": 10076160,
+      "matches": true
+    },
+    "backup": {
+      "sha256": "f2f9ac10981a30be8442e96557352ff03346cbc868fba0aeefeb4aa389e9d6c8",
+      "bytes": 9625600,
+      "matches": true
+    },
+    "manifest": {
+      "sha256": "6b9ce7cbd4ccda57c6b106194776c01e07ec3e0791d21c32317fc9402455230a",
+      "bytes": 156456,
+      "matches": true
+    },
+    "drafts": {
+      "sha256": "c44672b3e81988051478a50e8b8235e26f2773f0d2911adc4034747e557398f8",
+      "bytes": 45077,
+      "matches": true
+    },
+    "captures": {
+      "sha256": "5783c8a9edd38954ae1b7fcaa9f0d69acce9dd966609dd9ad9b92916a5f39dea",
+      "bytes": 7665,
+      "matches": true
+    },
+    "validation": {
+      "sha256": "e2d18e3dad8ae52d773a846bc707c9a6e4750c2f1d9082fd4e70ea14f03da9bc",
+      "bytes": 1753,
+      "matches": true
+    },
+    "snapshot": {
+      "sha256": "32dc56e3cfc6e7ce531535c7d523303e3f7b96105f4ffb64e093c5ee21dc1aa5",
+      "bytes": 10076160,
+      "matches": true
+    }
+  },
+  "restored_v2_mentions": 105,
+  "outcomes": {
+    "mapped": 99,
+    "composite_label": 4,
+    "not_a_method": 2
+  },
+  "all_v2_current": true,
+  "historical_v1_mentions_current": 74,
+  "problem_parent_lookup_current": true,
+  "integrity": "ok",
+  "fk_violations": 0
+}
