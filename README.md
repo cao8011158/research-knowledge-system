@@ -1,12 +1,61 @@
-# research-knowledge-system
-A research knowledge system for evaluating knowledge graph-based information retrieval with LLM agents.
+# Research Knowledge System
 
-## Current integration status — 2026-11-04
+A Phase 2 research project that builds a scholarly knowledge graph and tests
+whether an LLM agent can find papers, follow graph relationships, and answer
+questions with traceable evidence. The corpus covers agent memory management,
+context compression, and procedural skills, including related tool use.
 
-- [KG Builder](https://github.com/cao8011158/kg-builder/blob/b25a8de7ebd5e9e11baaafb39eb3fc82ac71d1c9/README.md) builds the versioned paper graph, publishes it to Neo4j, and provides BM25 and HNSW retrieval indexes. Submodule pin `b25a8de`.
-- [Research Agent](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/README.md) queries the graph and traces evidence to papers through read-only Neo4j MCP. Submodule pin `7b6b4f8`.
+## Repositories
 
-The Research Agent README records the completed Colab comparison and identifies the experiment revision used for web search. It also links the revised question set for the next evaluation. The dated sections below describe earlier development stages.
+| Submodule | Role | Pinned documentation |
+| --- | --- | --- |
+| [kg-builder](https://github.com/cao8011158/kg-builder) | Collects and reviews papers, builds the versioned graph, publishes it to Neo4j, and exports BM25 and HNSW indexes. | [README at `b25a8de`](https://github.com/cao8011158/kg-builder/blob/b25a8de7ebd5e9e11baaafb39eb3fc82ac71d1c9/README.md) |
+| [research-agent](https://github.com/cao8011158/research-agent) | Runs Qwen through Strata in Colab, retrieves and reranks candidates, follows source records through read-only Neo4j MCP, and evaluates answers. | [README at `7b6b4f8`](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/README.md) |
+
+## Phase 2 workflow
+
+1. Collect titles, abstracts, and publication metadata from OpenAlex and arXiv.
+   The full build screened **8,270 deduplicated candidates** and included
+   **3,162 papers** with approved extraction items.
+2. Build a frozen, versioned graph and publish it to Neo4j. The graph connects
+   methods, benchmarks, research problems, and reported contributions to their
+   paper evidence.
+3. Use BM25 and HNSW to find candidates, rerank them with Qwen, and follow
+   stable IDs through Cypher to verify sources and relationships. The agent
+   separates graph relations, shared mentions, and inferences drawn from papers.
+
+## Evaluation
+
+All **24 known-source lookup checks** ranked the expected source first.
+The Colab agent evaluation used seven prompts and three tool configurations.
+**20 of 21 question–configuration pairs** produced an answer. The web-only run that exhausted its tool
+budget received zero points.
+
+| Configuration | Formal score (v1) |
+| --- | ---: |
+| KG only | 45/48 |
+| KG plus web search | 46/48 |
+| Web search only | 29/48 |
+
+The formal total covers six questions. The privacy question used to calibrate
+the run was scored separately. KG access helped most on tasks requiring
+verification of project graph IDs and relationships. The
+[Research Agent results](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/README.md#completed-results-v1)
+describe the experimental code revision, per-question scores, and limitations.
+The [v2 question set](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/experiments/kg-web-eval/questions-v2.json)
+replaces the internal method-ID lookup with a question based on public evidence.
+Its replacement question is pending in all three modes.
+
+## Check out the pinned repositories
+
+```bash
+git clone --recurse-submodules https://github.com/cao8011158/research-knowledge-system.git
+```
+
+Use the two submodule READMEs for setup, development, and experiment details.
+
+<details>
+<summary>Earlier development records (October 2026)</summary>
 
 ## Current research scope — 2026-10-31
 
@@ -49,3 +98,5 @@ SQLite stores immutable manual review batches separately from original extractio
 Select current immutable batch `entity-resolution-20261031-v2` explicitly:105mentions,99single mappings,4compound outcomes,2nonmethod outcomes,0insufficient-evidence outcomes;74current entities. The previous v1batch remains historical. Total DB:365papers,403versions,411sources,40Draft extractions,371relevance reviews,2resolution batches/101stored entities/179stored mentions.14new Drafts cover identity/problem sections only, with empty experiment/result arrays; no reproduction or verified publication-date/checkpoint claim. Original26Drafts and old review rows are retained exactly.
 
 Resolutionv0.2 adds typed outcomes/components and Problem parent IDs without SQLite DDL changes.29tests and two independent review rounds passed, including a fixed v1opaque-extension compatibility defect, atomicity/stale dependency handling, indexed growth checks, installed profiles, reconciliation and Drive raw-file restoration. Raw full-paper captures stay outside deliverables; metadata/hashes and structured paraphrases are private Drive artifacts. No graph writer, embeddings, LLMAPI extraction or scheduler ran.
+
+</details>
