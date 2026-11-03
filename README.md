@@ -1,6 +1,10 @@
 # research-knowledge-system
 A research knowledge system for evaluating knowledge graph-based information retrieval with LLM agents.
 
+## Current integration status — 2026-11-03
+
+The `kg-builder` submodule now points to the merged PostgreSQL research graph workflow. PostgreSQL owns preparation and graph state; approved graph events can be published incrementally to Neo4j. See [KG Builder operations](kg-builder/docs/POSTGRES_GRAPH.md). The `research-agent` submodule remains a scaffold, so this parent repository has not validated a running two-system integration. The dated sections below preserve earlier research and implementation history.
+
 ## Current research scope — 2026-10-31
 
 First public release2025-01-01onward. Active domains: **Agent Memory**, **Context Management & Compression**, and **Skill / Self-improving Skill**. Tool Use, RL Post-training and general Recursive Self-improvement are no longer independent discovery targets; retain cross-domain papers only when substantively focused on one of the three selected areas. [Current scope and boundaries](kg-builder/docs/CURRENT_RESEARCH_SCOPE.md).
@@ -23,7 +27,7 @@ The private Drive database now retains365 candidate paper identities,383 version
 
 [Full-text pilot report](docs/reviews/fulltext-pilot-20261031/REPORT.md) supersedes the earlier report for current database counts. Six version-pinned manual Draft extractions were added from selected source sections/tables: A-Mem, ACE, ToolRL, DAPO, DGM and SkillWeaver. The private database now has365 paper identities,389 version/snapshot rows,397 source records,26 Draft extractions and371 relevance-review rows. All previous records remain preserved. The KG Builder ontology pilot document refines candidate properties, identity boundaries and edge contracts; the schema is not frozen and no Neo4j graph has been built.
 
-Current KG Builder submodule pin: `fc114851d5017aed7c8d5477b58b2ff8dac6bbfa`.
+Current KG Builder submodule pin: `98d91760e0c6413fcd5e341585174408946872a4`.
 
 ## Executable schema and atomic imports — 2026-10-31
 
