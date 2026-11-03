@@ -1,9 +1,12 @@
 # research-knowledge-system
 A research knowledge system for evaluating knowledge graph-based information retrieval with LLM agents.
 
-## Current integration status — 2026-11-03
+## Current integration status — 2026-11-04
 
-The `kg-builder` submodule now points to the merged PostgreSQL research graph workflow. PostgreSQL owns preparation and graph state; approved graph events can be published incrementally to Neo4j. See [KG Builder operations](kg-builder/docs/POSTGRES_GRAPH.md). The `research-agent` submodule remains a scaffold, so this parent repository has not validated a running two-system integration. The dated sections below preserve earlier research and implementation history.
+- [KG Builder](https://github.com/cao8011158/kg-builder/blob/b25a8de7ebd5e9e11baaafb39eb3fc82ac71d1c9/README.md) builds the versioned paper graph, publishes it to Neo4j, and provides BM25 and HNSW retrieval indexes. Submodule pin `b25a8de`.
+- [Research Agent](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/README.md) queries the graph and traces evidence to papers through read-only Neo4j MCP. Submodule pin `7b6b4f8`.
+
+The Research Agent README records the completed Colab comparison and identifies the experiment revision used for web search. It also links the revised question set for the next evaluation. The dated sections below describe earlier development stages.
 
 ## Current research scope — 2026-10-31
 
@@ -26,8 +29,6 @@ The private Drive database now retains365 candidate paper identities,383 version
 ## Six-domain source-reading pilot — 2026-10-31
 
 [Full-text pilot report](docs/reviews/fulltext-pilot-20261031/REPORT.md) supersedes the earlier report for current database counts. Six version-pinned manual Draft extractions were added from selected source sections/tables: A-Mem, ACE, ToolRL, DAPO, DGM and SkillWeaver. The private database now has365 paper identities,389 version/snapshot rows,397 source records,26 Draft extractions and371 relevance-review rows. All previous records remain preserved. The KG Builder ontology pilot document refines candidate properties, identity boundaries and edge contracts; the schema is not frozen and no Neo4j graph has been built.
-
-Current KG Builder submodule pin: `98d91760e0c6413fcd5e341585174408946872a4`.
 
 ## Executable schema and atomic imports — 2026-10-31
 
