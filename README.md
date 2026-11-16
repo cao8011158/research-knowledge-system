@@ -9,7 +9,7 @@ context compression, and procedural skills, including related tool use.
 
 | Submodule | Role | Pinned documentation |
 | --- | --- | --- |
-| [kg-builder](https://github.com/cao8011158/kg-builder) | Collects and reviews papers, builds the versioned graph, publishes it to Neo4j, and exports BM25 and HNSW indexes. | [README at `b25a8de`](https://github.com/cao8011158/kg-builder/blob/b25a8de7ebd5e9e11baaafb39eb3fc82ac71d1c9/README.md) |
+| [kg-builder](https://github.com/cao8011158/kg-builder) | Collects and reviews papers, builds the versioned graph, publishes it to Neo4j, and exports BM25 and HNSW indexes. | [README at `5e0a597`](https://github.com/cao8011158/kg-builder/blob/5e0a5979a450fa6d8d27109c196440b38e60fa28/README.md) |
 | [research-agent](https://github.com/cao8011158/research-agent) | Runs Qwen through Strata in Colab, retrieves and reranks candidates, follows source records through read-only Neo4j MCP, and evaluates answers. | [README at `7b6b4f8`](https://github.com/cao8011158/research-agent/blob/7b6b4f8716c31c1dfe2d3b8dcbc2dbeefac5039e/README.md) |
 
 ## Phase 2 workflow
